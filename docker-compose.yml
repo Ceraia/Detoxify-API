@@ -1,0 +1,8 @@
+name: detoxify
+services:
+    detoxify-api:
+        volumes:
+          - ./.cache:/root/.cache
+        ports:
+            - 8000:8000
+        image: ghcr.io/ceraia/detoxify-api:latest
