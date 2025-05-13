@@ -1,8 +1,15 @@
+# filepath: c:\Users\Axodouble\Documents\detoxify-simpleapi\docker-compose.yml
 name: detoxify
 services:
     detoxify-api:
+        build:
+          context: .
+          dockerfile: Dockerfile
         volumes:
+          # Model cache - persists downloaded model files
           - ./.cache:/root/.cache
+          # Package cache - persists installed packages
+          - ./.cached_packages:/.cached_packages
         ports:
             - 8000:8000
         image: ghcr.io/ceraia/detoxify-api:latest
