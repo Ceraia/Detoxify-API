@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, Depends
+from fastapi import FastAPI
 from pydantic import BaseModel
 import os
 import sys
@@ -35,8 +35,6 @@ def get_model():
     global model
     if model is None:
         # Check and install necessary packages
-        get_or_install_package("torch")
-        get_or_install_package("transformers")
         get_or_install_package("detoxify")
         
         # Now we can import detoxify
