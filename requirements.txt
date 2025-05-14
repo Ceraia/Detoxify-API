@@ -1,5 +1,8 @@
-fastapi
-uvicorn
-torch
-transformers
-detoxify
+# filepath: c:\Users\Axodouble\Documents\detoxify-simpleapi\requirements.txt
+# Only minimal requirements for the API server
+fastapi>=0.115.12
+uvicorn>=0.34.2
+
+# The following packages will be lazily installed at runtime
+# and persisted in the volume mount
+# detoxify

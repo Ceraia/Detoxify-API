@@ -1,8 +1,14 @@
 name: detoxify
 services:
     detoxify-api:
+        build:
+          context: .
+          dockerfile: Dockerfile
         volumes:
-          - ./.cache:/root/.cache
+          # Model cache - persists downloaded model files
+          - ./.cache/application:/root/.cache
+          # Package cache - persists installed packages, very important to not redownload like 6 gigs of packages each time
+          - ./.cache/packages:/.cached_packages
         ports:
             - 8000:8000
         image: ghcr.io/ceraia/detoxify-api:latest
