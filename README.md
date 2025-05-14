@@ -22,6 +22,18 @@ This project provides a simple REST API for the Detoxify library, which uses dee
 
 ### Running with Docker
 
+#### Using a command
+```bash
+docker run -d \
+  --name detoxify-api \
+  -v "$(pwd)/.cache/application:/root/.cache" \
+  -v "$(pwd)/.cache/packages:/.cached_packages" \
+  -p 8000:8000 \
+  ghcr.io/ceraia/detoxify-api:latest
+```
+
+#### Using Docker Compose (Recommended)
+
 The easiest way to run the API is using Docker:
 
 ```bash
